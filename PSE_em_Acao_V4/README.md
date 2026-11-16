@@ -87,8 +87,24 @@ Utilize exclusivamente dados fictícios e informações coletivas. Não registre
 ## Integrantes
 
 - Enzo Costa Gonçalves
-- Eloi Junior Martins
+- João Paulo do Amaral
 - Pedro Lucas de Melo
+- Rhasller
 
 ## Repositório
 https://github.com/Enzo-Gonen/AEP-2-B
+
+
+## Correção do inicializador Windows
+
+O inicializador foi revisado para não depender de alterações de PATH feitas em um processo PowerShell filho. O bootstrap agora grava o caminho absoluto do `gcc.exe` em `build/gcc_path.txt`; o BAT lê esse caminho e chama o compilador diretamente. Também foram adicionadas verificações para confirmar que a pasta foi extraída por completo, que os arquivos-fonte existem, que o compilador está acessível e que o executável foi realmente criado.
+
+Se a instalação automática não funcionar, abra o PowerShell e verifique:
+```powershell
+winget --version
+Test-Path C:\msys64\usr\bin\bash.exe
+Test-Path C:\msys64\ucrt64\bin\gcc.exe
+```
+Se `winget` estiver ausente, instale/atualize o **App Installer** pela Microsoft Store. Depois execute novamente `EXECUTAR_WINDOWS.bat`.
+
+**Importante:** a instalação automática do compilador depende do Windows Package Manager, de conexão com a internet e das permissões configuradas no computador. O código C foi compilado e testado neste ambiente; o bootstrap e a execução do BAT precisam de validação final em Windows real.
