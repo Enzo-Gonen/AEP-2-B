@@ -87,9 +87,8 @@ Utilize exclusivamente dados fictícios e informações coletivas. Não registre
 ## Integrantes
 
 - Enzo Costa Gonçalves
-- João Paulo do Amaral
+- Eloi Junior Martins
 - Pedro Lucas de Melo
-- Rhasller
 
 ## Repositório
 https://github.com/Enzo-Gonen/AEP-2-B
